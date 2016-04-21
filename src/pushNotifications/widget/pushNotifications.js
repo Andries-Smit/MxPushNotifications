@@ -1,4 +1,4 @@
-/*global logger*/
+/*global logger, cordova, mx, mxui, device*/
 /*
     pushNotifications
     ========================
@@ -80,7 +80,7 @@ define([
             this._contextGuid = obj;
             mx.data.get({
                 guids    : [obj],
-                callback : lang.hitch(this, function (objArr) {
+                callback : dojoLang.hitch(this, function (objArr) {
                     if (objArr.length === 1){
                         this._loadData(objArr[0]);
                     }
